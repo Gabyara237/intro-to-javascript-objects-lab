@@ -278,10 +278,30 @@ Solve Exercise 14 here:
 */
 
 
-const partyCount = () =>{
+const partyCount = () => {
     return (game.party.length);
 }
 
 game.partyCount = partyCount;
 
 console.log(game.partyCount());
+
+
+/*
+Exercise 15
+1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+(change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 15 here:
+*/
+
+game.gyms.forEach((gym)=>{
+    if(gym.difficulty < 8 && gym.completed === false){
+        gym.completed = true;
+    }
+})
+
+// Reflection
+// Similar: Iterate over each element of the gym array to update the value of the "completed" property for all gyms that have a difficulty value lower than a given number.
+// Different: The specific number given for the evaluation was different for each exercise (3, 6, 8).
+console.log(game.gyms);
