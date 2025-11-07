@@ -305,3 +305,15 @@ game.gyms.forEach((gym)=>{
 // Similar: Iterate over each element of the gym array to update the value of the "completed" property for all gyms that have a difficulty value lower than a given number.
 // Different: The specific number given for the evaluation was different for each exercise (3, 6, 8).
 console.log(game.gyms);
+
+
+
+/*
+Exercise 16
+1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
+
+
+Solve Exercise 16 here:
+*/
+
+console.log(game);
