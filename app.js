@@ -20,4 +20,9 @@ const game = {
   ],
 }
 
-console.dir(pokemon, { maxArrayLength: null })
+// Exercise 1
+console.dir(pokemon, { maxArrayLength: null });
+
+// Exercise 2
+console.log(game);
+
