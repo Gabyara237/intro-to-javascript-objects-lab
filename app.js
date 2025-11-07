@@ -157,8 +157,41 @@ Solve Exercise 10 here:
 */
 
 // Create method
+
+// const catchPokemon = (pokemonObj) => {
+//     game.party.push(pokemonObj);
+// }
+
+// Add method to the game object
+// game.catchPokemon = catchPokemon;
+
+// Call method with the last pokemon in the `pokemon` data
+// game.catchPokemon(pokemon[pokemon.length-1]);
+
+// console.log(game.party);
+
+
+/*
+Exercise 11
+1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
+2. How will you find and update the quantity of pokeballs in the `game.items` array?
+
+Tips:
+For this exercise, it's okay to have a negative number of pokeballs.
+After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 11 here:
+*/
+
 const catchPokemon = (pokemonObj) => {
     game.party.push(pokemonObj);
+    game.items.forEach((item) => {
+        if (item.name === "pokeball"){
+            item.quantity--;
+        }
+    });
+
 }
 
 // Add method to the game object
@@ -167,4 +200,4 @@ game.catchPokemon = catchPokemon;
 // Call method with the last pokemon in the `pokemon` data
 game.catchPokemon(pokemon[pokemon.length-1]);
 
-console.log(game.party);
+console.log(game.items);
