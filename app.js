@@ -64,7 +64,7 @@ Exercise 5
 Solve Exercise 5 here:
 */
 
-const pokemons = pokemon.filter(currentPokemon => currentPokemon.hp>80).slice(0,3)
+const pokemons = pokemon.filter(currentPokemon => currentPokemon.hp > 80).slice(0,3)
 
 pokemons.forEach((pokemon)=>{
     game.party.push(pokemon);
@@ -115,4 +115,15 @@ game.party.splice(pokemonToEvolveIndex,1,pokemon[index+1]);
 console.log(game.party);
 
 
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+
+game.party.forEach((pokemon)=>{
+    console.log(pokemon.name);
+});
 
