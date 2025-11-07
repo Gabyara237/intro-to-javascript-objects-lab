@@ -184,23 +184,23 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 Solve Exercise 11 here:
 */
 
-const catchPokemon = (pokemonObj) => {
-    game.party.push(pokemonObj);
-    game.items.forEach((item) => {
-        if (item.name === "pokeball"){
-            item.quantity--;
-        }
-    });
+// const catchPokemon = (pokemonObj) => {
+//     game.party.push(pokemonObj);
+//     game.items.forEach((item) => {
+//         if (item.name === "pokeball"){
+//             item.quantity--;
+//         }
+//     });
 
-}
+// }
 
-// Add method to the game object
-game.catchPokemon = catchPokemon;
+// // Add method to the game object
+// game.catchPokemon = catchPokemon;
 
-// Call method with the last pokemon in the `pokemon` data
-game.catchPokemon(pokemon[pokemon.length-1]);
+// // Call method with the last pokemon in the `pokemon` data
+// game.catchPokemon(pokemon[pokemon.length-1]);
 
-console.log(game.items);
+// console.log(game.items);
 
 
 /*
@@ -325,7 +325,6 @@ Exercise 17
 1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
 2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
 
-
 Solve Exercise 17 here:
 */
 
@@ -335,3 +334,46 @@ const comparation = (pokemonA,pokemonB) => {
 game.party.sort(comparation);
 
 console.log(game.party);
+
+
+
+/*
+Exercise 18
+Add a new property to the `game` object called `collection` and initialize its value to an empty array.
+
+Copy the `catchPokemon` method you wrote in Exercise Twelve and paste it below. Modify it so that:
+  - Ensure that no more than six Pokemon can be in the party at any time. 
+    Excess Pokemon should be placed in the `game.collection` array.
+  - It's up to you how to distribute Pokemon in a situation where more than six 
+    would be placed into the `game.party` array.
+
+Again, for this exercise, it's okay to have a negative number of pokeballs.
+
+After updating the method, use it by calling it and passing in a pokemon object of your choice from the `pokemon` data to catch it.
+
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 18 here:
+*/
+
+
+game.collection = [];
+
+const catchPokemon = (pokemonObj) => {
+    if (game.party.length < 6){
+        game.party.push(pokemonObj);
+    }else{
+        game.collection.push(pokemonObj);
+    }
+
+    game.items.forEach((item) => {
+        if (item.name === "pokeball"){
+            item.quantity--;
+        }
+    });
+}
+
+game.catchPokemon = catchPokemon;
+game.catchPokemon(pokemon[pokemon.length-1]);
+
+console.log(game.items);
